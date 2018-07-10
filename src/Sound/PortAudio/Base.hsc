@@ -274,7 +274,8 @@ foreign import ccall unsafe "portaudio.h Pa_GetDeviceInfo"
 foreign import ccall unsafe "portaudio.h Pa_IsFormatSupported"
     pa_IsFormatSupported :: Ptr PaStreamParameters
                          -> Ptr PaStreamParameters
-                         -> IO CDouble
+                         -> CDouble
+                         -> IO CInt
 
 {- PaError Pa_OpenStream( PaStream** stream,
                           const PaStreamParameters *inputParameters,
