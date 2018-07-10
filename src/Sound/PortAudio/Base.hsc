@@ -47,7 +47,7 @@ type PaStreamCallbackFunPtr = FunPtr PaStreamCallback
 
 type PaStreamFinishedCallback =
     (  Ptr () -> IO ()
-    )  
+    )
 
 type PaStreamFinishedCallbackFunPtr = FunPtr PaStreamFinishedCallback
 
@@ -110,52 +110,52 @@ data PaStreamInfo = PaStreamInfo {
 {- Enumerable values -}
 #{enum PaErrorCode, PaErrorCode
     , paNoError = paNoError
-    , paNotInitialized = paNotInitialized 
-    , paUnanticipatedHostError = paUnanticipatedHostError 
-    , paInvalidChannelCount = paInvalidChannelCount 
-    , paInvalidSampleRate = paInvalidSampleRate 
-    , paInvalidDevice = paInvalidDevice 
-    , paInvalidFlag = paInvalidFlag 
-    , paSampleFormatNotSupported = paSampleFormatNotSupported 
-    , paBadIODeviceCombination = paBadIODeviceCombination 
-    , paInsufficientMemory = paInsufficientMemory 
-    , paBufferTooBig = paBufferTooBig 
-    , paBufferTooSmall = paBufferTooSmall 
-    , paNullCallback = paNullCallback 
-    , paBadStreamPtr = paBadStreamPtr 
-    , paTimedOut = paTimedOut 
-    , paInternalError = paInternalError 
-    , paDeviceUnavailable = paDeviceUnavailable 
-    , paIncompatibleHostApiSpecificStreamInfo = paIncompatibleHostApiSpecificStreamInfo 
-    , paStreamIsStopped = paStreamIsStopped 
-    , paStreamIsNotStopped = paStreamIsNotStopped 
-    , paInputOverflowed = paInputOverflowed 
-    , paOutputUnderflowed = paOutputUnderflowed 
-    , paHostApiNotFound = paHostApiNotFound 
-    , paInvalidHostApi = paInvalidHostApi 
-    , paCanNotReadFromACallbackStream = paCanNotReadFromACallbackStream 
-    , paCanNotWriteToACallbackStream = paCanNotWriteToACallbackStream 
-    , paCanNotReadFromAnOutputOnlyStream = paCanNotReadFromAnOutputOnlyStream 
-    , paCanNotWriteToAnInputOnlyStream = paCanNotWriteToAnInputOnlyStream 
-    , paIncompatibleStreamHostApi = paIncompatibleStreamHostApi 
-    , paBadBufferPtr = paBadBufferPtr 
+    , paNotInitialized = paNotInitialized
+    , paUnanticipatedHostError = paUnanticipatedHostError
+    , paInvalidChannelCount = paInvalidChannelCount
+    , paInvalidSampleRate = paInvalidSampleRate
+    , paInvalidDevice = paInvalidDevice
+    , paInvalidFlag = paInvalidFlag
+    , paSampleFormatNotSupported = paSampleFormatNotSupported
+    , paBadIODeviceCombination = paBadIODeviceCombination
+    , paInsufficientMemory = paInsufficientMemory
+    , paBufferTooBig = paBufferTooBig
+    , paBufferTooSmall = paBufferTooSmall
+    , paNullCallback = paNullCallback
+    , paBadStreamPtr = paBadStreamPtr
+    , paTimedOut = paTimedOut
+    , paInternalError = paInternalError
+    , paDeviceUnavailable = paDeviceUnavailable
+    , paIncompatibleHostApiSpecificStreamInfo = paIncompatibleHostApiSpecificStreamInfo
+    , paStreamIsStopped = paStreamIsStopped
+    , paStreamIsNotStopped = paStreamIsNotStopped
+    , paInputOverflowed = paInputOverflowed
+    , paOutputUnderflowed = paOutputUnderflowed
+    , paHostApiNotFound = paHostApiNotFound
+    , paInvalidHostApi = paInvalidHostApi
+    , paCanNotReadFromACallbackStream = paCanNotReadFromACallbackStream
+    , paCanNotWriteToACallbackStream = paCanNotWriteToACallbackStream
+    , paCanNotReadFromAnOutputOnlyStream = paCanNotReadFromAnOutputOnlyStream
+    , paCanNotWriteToAnInputOnlyStream = paCanNotWriteToAnInputOnlyStream
+    , paIncompatibleStreamHostApi = paIncompatibleStreamHostApi
+    , paBadBufferPtr = paBadBufferPtr
     }
 
 #{enum PaHostApiTypeId, PaHostApiTypeId
-    , paInDevelopment = paInDevelopment 
-    , paDirectSound = paDirectSound 
-    , paMME = paMME 
-    , paASIO = paASIO 
-    , paSoundManager = paSoundManager 
-    , paCoreAudio = paCoreAudio 
-    , paOSS = paOSS 
-    , paALSA = paALSA 
-    , paAL = paAL 
-    , paBeOS = paBeOS 
-    , paWDMKS = paWDMKS 
-    , paJACK = paJACK 
-    , paWASAPI = paWASAPI 
-    , paAudioScienceHPI = paAudioScienceHPI 
+    , paInDevelopment = paInDevelopment
+    , paDirectSound = paDirectSound
+    , paMME = paMME
+    , paASIO = paASIO
+    , paSoundManager = paSoundManager
+    , paCoreAudio = paCoreAudio
+    , paOSS = paOSS
+    , paALSA = paALSA
+    , paAL = paAL
+    , paBeOS = paBeOS
+    , paWDMKS = paWDMKS
+    , paJACK = paJACK
+    , paWASAPI = paWASAPI
+    , paAudioScienceHPI = paAudioScienceHPI
     }
 
 #{enum PaDeviceIndex, PaDeviceIndex
@@ -218,7 +218,7 @@ foreign import ccall unsafe "portaudio.h Pa_GetVersionText"
 
 {- const char * Pa_GetErrorText( PaError errorCode ); -}
 foreign import ccall unsafe "portaudio.h Pa_GetErrorText"
-    pa_GetErrorText :: CInt -> IO CString 
+    pa_GetErrorText :: CInt -> IO CString
 
 {- PaError Pa_Initialize( void ); -}
 foreign import ccall unsafe "portaudio.h Pa_Initialize"
