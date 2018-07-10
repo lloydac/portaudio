@@ -369,7 +369,7 @@ foreign import ccall unsafe "portaudio.h Pa_GetStreamCpuLoad"
 {- PaError Pa_ReadStream( PaStream* stream,
                           void *buffer,
                           unsigned long frames ); -}
-foreign import ccall unsafe "portaudio.h Pa_ReadStream"
+foreign import ccall safe "portaudio.h Pa_ReadStream"
     pa_ReadStream :: Ptr PaStream
                   -> Ptr ()
                   -> CULong
@@ -378,7 +378,7 @@ foreign import ccall unsafe "portaudio.h Pa_ReadStream"
 {- PaError Pa_WriteStream( PaStream* stream,
                            const void *buffer,
                            unsigned long frames ); -}
-foreign import ccall unsafe "portaudio.h Pa_WriteStream"
+foreign import ccall safe "portaudio.h Pa_WriteStream"
     pa_WriteStream :: Ptr PaStream
                    -> Ptr ()
                    -> CULong
@@ -400,7 +400,7 @@ foreign import ccall unsafe "portaudio.h Pa_GetSampleSize"
                      -> IO CInt
 
 {- void Pa_Sleep( long msec ); -}
-foreign import ccall unsafe "portaudio.h Pa_Sleep"
+foreign import ccall safe "portaudio.h Pa_Sleep"
     pa_Sleep :: CLong
              -> IO ()
 
