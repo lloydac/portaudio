@@ -39,7 +39,7 @@ type PaStreamCallback =
     -> Ptr () -- output
     -> CULong  -- frameCount
     -> Ptr PaStreamCallbackTimeInfo -- timeInfo
-    -> CInt -- statusFlags
+    -> CULong -- statusFlags
     -> Ptr () -- userData
     -> IO CInt
     )

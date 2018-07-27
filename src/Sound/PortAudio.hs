@@ -187,9 +187,9 @@ data StreamCallbackFlag
 
 
 -- | Turn a bitmask of callback flags as passed into a "raw" callback and give back a nice usable list of @StreamCallbackFlags@
-unpackCallbackFlags :: CInt -> [StreamCallbackFlag]
+unpackCallbackFlags :: CULong -> [StreamCallbackFlag]
 unpackCallbackFlags i = [flag | (value, flag) <- flagsAndValues, i .&. value == value]
-    where flagsAndValues = map (first $ fromIntegral . Base.unPaStreamCallbackFlags) 
+    where flagsAndValues = map (first $ Base.unPaStreamCallbackFlags)
                            [ (Base.paInputUnderflow, InputUnderflow)
                            , (Base.paInputOverflow, InputOverflow)
                            , (Base.paOutputUnderflow, OutputUnderflow)
