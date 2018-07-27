@@ -221,11 +221,11 @@ foreign import ccall unsafe "portaudio.h Pa_GetErrorText"
     pa_GetErrorText :: CInt -> IO CString
 
 {- PaError Pa_Initialize( void ); -}
-foreign import ccall unsafe "portaudio.h Pa_Initialize"
+foreign import ccall safe "portaudio.h Pa_Initialize"
     pa_Initialize :: IO CInt
 
 {- PaError Pa_Terminate( void ); -}
-foreign import ccall unsafe "portaudio.h Pa_Terminate"
+foreign import ccall safe "portaudio.h Pa_Terminate"
     pa_Terminate :: IO CInt
 
 {- PaHostApiIndex Pa_GetHostApiCount( void ); -}
@@ -316,7 +316,7 @@ foreign import ccall safe "portaudio.h Pa_OpenDefaultStream"
                          -> IO CInt
 
 {- PaError Pa_CloseStream( PaStream *stream ); -}
-foreign import ccall unsafe "portaudio.h Pa_CloseStream"
+foreign import ccall safe "portaudio.h Pa_CloseStream"
     pa_CloseStream :: Ptr PaStream
                    -> IO CInt
 
